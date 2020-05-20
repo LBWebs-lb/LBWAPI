@@ -56,6 +56,9 @@ namespace ApiLbWebs.Controllers
 
             try
             {
+                lBMail.hmod = DateTime.Now.ToString("HH:mm");
+                lBMail.fmod = DateTime.Now.ToString("dd/M/yyyy");
+
                 await _context.SaveChangesAsync();
             }
             catch (DbUpdateConcurrencyException)
@@ -79,6 +82,10 @@ namespace ApiLbWebs.Controllers
         [HttpPost]
         public async Task<ActionResult<LBMail>> PostLBMail(LBMail lBMail)
         {
+            lBMail.faltrto = DateTime.Now;
+            lBMail.hmod = DateTime.Now.ToString("HH:mm");
+            lBMail.fmod = DateTime.Now.ToString("dd/M/yyyy");
+
             _context.LBMail.Add(lBMail);
             await _context.SaveChangesAsync();
 
