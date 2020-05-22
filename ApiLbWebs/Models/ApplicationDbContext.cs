@@ -22,5 +22,10 @@ namespace ApiLbWebs.Models
         public DbSet<clihos> clihos { get; set; }
         public DbSet<clilb> clilb { get; set; }
         public DbSet<prediscli> prediscli { get; set; }
+        public DbSet<userslb> userslb { get; set; }
+        public DbSet<userop> userop { get; set; }
+        public DbSet<usermod> usermod { get; set; }
+        public DbSet<userrol> userrol { get; set; }
+        public DbSet<usrrolop> usrrolop { get; set; }
     }
 }
