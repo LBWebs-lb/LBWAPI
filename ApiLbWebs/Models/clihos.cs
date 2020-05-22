@@ -13,5 +13,10 @@ namespace ApiLbWebs.Models
         public string userhos { get; set; }
         public string passhos { get; set; }
         public string linkwphos { get; set; }
+        public string cusualt { get; set; }
+        public DateTime faltrto { get; set; }
+        public string cusumod { get; set; }
+        public string fmod { get; set; }
+        public string hmod { get; set; }
     }
 }
