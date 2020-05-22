@@ -56,6 +56,8 @@ namespace ApiLbWebs.Controllers
 
             try
             {
+                clidev.hmod = DateTime.Now.ToString("HH:mm");
+                clidev.fmod = DateTime.Now.ToString("dd/M/yyyy");
                 await _context.SaveChangesAsync();
             }
             catch (DbUpdateConcurrencyException)
@@ -79,6 +81,9 @@ namespace ApiLbWebs.Controllers
         [HttpPost]
         public async Task<ActionResult<clidev>> Postclidev(clidev clidev)
         {
+            clidev.faltrto = DateTime.Now;
+            clidev.hmod = DateTime.Now.ToString("HH:mm");
+            clidev.fmod = DateTime.Now.ToString("dd/M/yyyy");
             _context.clidev.Add(clidev);
             await _context.SaveChangesAsync();
 
