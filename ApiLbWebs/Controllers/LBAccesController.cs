@@ -56,9 +56,6 @@ namespace ApiLbWebs.Controllers
 
             try
             {
-                lBAcces.hmod = DateTime.Now.ToString("HH:mm");
-                lBAcces.fmod = DateTime.Now.ToString("dd/M/yyyy");
-
                 await _context.SaveChangesAsync();
             }
             catch (DbUpdateConcurrencyException)
@@ -86,10 +83,6 @@ namespace ApiLbWebs.Controllers
             //data = new System.Security.Cryptography.SHA256Managed().ComputeHash(data);
             //String hash = System.Text.Encoding.ASCII.GetString(data);
             //lBAcces.passWd = hash;
-
-            lBAcces.faltrto = DateTime.Now;
-            lBAcces.hmod = DateTime.Now.ToString("HH:mm");
-            lBAcces.fmod = DateTime.Now.ToString("dd/M/yyyy");
 
             _context.LBAcces.Add(lBAcces);
             await _context.SaveChangesAsync();

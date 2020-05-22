@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using ApiLbWebs.Models;
+using System.Threading;
 
 namespace ApiLbWebs.Models
 {
@@ -13,6 +14,27 @@ namespace ApiLbWebs.Models
             :base(options)
         {
 
+        }
+        public override Task<int> SaveChangesAsync(bool acceptAllChangesOnSuccess, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var AddedEntities = ChangeTracker.Entries().Where(E => E.State == EntityState.Added).ToList();
+
+            AddedEntities.ForEach(E =>
+            {
+                E.Property("faltrto").CurrentValue = DateTime.Now;
+                E.Property("hmod").CurrentValue = DateTime.Now.ToString("HH:mm");
+                E.Property("fmod").CurrentValue = DateTime.Now.ToString("dd/M/yyyy");
+            });
+
+            var EditedEntities = ChangeTracker.Entries().Where(E => E.State == EntityState.Modified).ToList();
+
+            EditedEntities.ForEach(E =>
+            {
+                E.Property("hmod").CurrentValue = DateTime.Now.ToString("HH:mm");
+                E.Property("fmod").CurrentValue = DateTime.Now.ToString("dd/M/yyyy");
+            });
+
+            return base.SaveChangesAsync(acceptAllChangesOnSuccess, cancellationToken);
         }
 
         public DbSet<LBAcces> LBAcces { get; set; }
