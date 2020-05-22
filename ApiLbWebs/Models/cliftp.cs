@@ -13,5 +13,10 @@ namespace ApiLbWebs.Models
         public string userftp { get; set; }
         public string passftp { get; set; }
         public string ipserver { get; set; }
+        public string cusualt { get; set; }
+        public DateTime faltrto { get; set; }
+        public string cusumod { get; set; }
+        public string fmod { get; set; }
+        public string hmod { get; set; }
     }
 }

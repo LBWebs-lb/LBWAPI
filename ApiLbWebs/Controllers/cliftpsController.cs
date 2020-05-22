@@ -56,6 +56,8 @@ namespace ApiLbWebs.Controllers
 
             try
             {
+                cliftp.hmod = DateTime.Now.ToString("HH:mm");
+                cliftp.fmod = DateTime.Now.ToString("dd/M/yyyy");
                 await _context.SaveChangesAsync();
             }
             catch (DbUpdateConcurrencyException)
@@ -79,6 +81,9 @@ namespace ApiLbWebs.Controllers
         [HttpPost]
         public async Task<ActionResult<cliftp>> Postcliftp(cliftp cliftp)
         {
+            cliftp.faltrto = DateTime.Now;
+            cliftp.hmod = DateTime.Now.ToString("HH:mm");
+            cliftp.fmod = DateTime.Now.ToString("dd/M/yyyy");
             _context.cliftp.Add(cliftp);
             await _context.SaveChangesAsync();
 
