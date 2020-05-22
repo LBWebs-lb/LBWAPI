@@ -26,8 +26,16 @@ namespace ApiLbWebs.Models
         public Estat est { get; set; }
         public string dobs { get; set; }
         public string tcli { get; set; }
+        public string cusualt { get; set; }
+        public DateTime faltrto { get; set; }
+        public string cusumod { get; set; }
+        public string fmod { get; set; }
+        public string hmod { get; set; }
     }
-    
+
+
+}
+
     public enum Estat
     {
         Pressupostat,
@@ -37,4 +45,4 @@ namespace ApiLbWebs.Models
         Entregada,
         RespostaClient
     }
-}
+
