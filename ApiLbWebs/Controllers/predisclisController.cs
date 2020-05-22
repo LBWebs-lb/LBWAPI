@@ -56,6 +56,8 @@ namespace ApiLbWebs.Controllers
 
             try
             {
+                prediscli.hmod = DateTime.Now.ToString("HH:mm");
+                prediscli.fmod = DateTime.Now.ToString("dd/M/yyyy");
                 await _context.SaveChangesAsync();
             }
             catch (DbUpdateConcurrencyException)
@@ -79,6 +81,9 @@ namespace ApiLbWebs.Controllers
         [HttpPost]
         public async Task<ActionResult<prediscli>> Postprediscli(prediscli prediscli)
         {
+            prediscli.faltrto = DateTime.Now;
+            prediscli.hmod = DateTime.Now.ToString("HH:mm");
+            prediscli.fmod = DateTime.Now.ToString("dd/M/yyyy");
             _context.prediscli.Add(prediscli);
             await _context.SaveChangesAsync();
 
