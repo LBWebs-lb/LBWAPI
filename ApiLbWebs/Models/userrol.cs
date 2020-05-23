@@ -11,5 +11,10 @@ namespace ApiLbWebs.Models
         [Key]
         public int irol { get; set; }
         public string dnomrol { get; set; }
+             public string cusualt { get; set; }
+        public DateTime faltrto { get; set; }
+        public string cusumod { get; set; }
+        public string fmod { get; set; }
+        public string hmod { get; set; }
     }
 }
