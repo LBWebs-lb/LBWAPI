@@ -17,5 +17,10 @@ namespace ApiLbWebs.Models
         public int iuserop { get; set; }
         [ForeignKey("iuserop")]
         public virtual userop Operacion { get; set; }
+        public string cusualt { get; set; }
+        public DateTime faltrto { get; set; }
+        public string cusumod { get; set; }
+        public string fmod { get; set; }
+        public string hmod { get; set; }
     }
 }
