@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using ApiLbWebs.Models;
+using ApiLbWebs.Classes;
 
 namespace ApiLbWebs.Controllers
 {
@@ -23,7 +24,7 @@ namespace ApiLbWebs.Controllers
         // GET: api/LBAcces
         [HttpGet]
         public async Task<ActionResult<IEnumerable<LBAcces>>> GetLBAcces()
-        {
+        {            
             return await _context.LBAcces.ToListAsync();
         }
 
@@ -79,11 +80,8 @@ namespace ApiLbWebs.Controllers
         [HttpPost]
         public async Task<ActionResult<LBAcces>> PostLBAcces(LBAcces lBAcces)
         {
-            //byte[] data = System.Text.Encoding.ASCII.GetBytes(lBAcces.passWd);
-            //data = new System.Security.Cryptography.SHA256Managed().ComputeHash(data);
-            //String hash = System.Text.Encoding.ASCII.GetString(data);
-            //lBAcces.passWd = hash;
-
+            Encriptacion.Encrypt(lBAcces.passWd, true);
+            lBAcces.passWd =  Encriptacion.Encrypt(lBAcces.passWd, true);
             _context.LBAcces.Add(lBAcces);
             await _context.SaveChangesAsync();
 
