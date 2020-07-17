@@ -19,8 +19,8 @@ namespace ApiLbWebs.Classes
                                                 new AppSettingsReader();
             // Get the key from config file
 
-            string key = (string)settingsReader.GetValue("SecurityKey",
-                                                             typeof(String));
+            string key = "txxswW3GYMqO3cO0UnyXsjIGySLglKAb";
+
             //System.Windows.Forms.MessageBox.Show(key);
             //If hashing use get hashcode regards to your key
             if (useHashing)

@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using ApiLbWebs.Models;
+using ApiLbWebs.Classes;
 
 namespace ApiLbWebs.Controllers
 {
@@ -83,6 +84,8 @@ namespace ApiLbWebs.Controllers
             //data = new System.Security.Cryptography.SHA256Managed().ComputeHash(data);
             //String hash = System.Text.Encoding.ASCII.GetString(data);
             //lBAcces.passWd = hash;
+
+            lBAcces.passWd = Encriptacion.Encrypt(lBAcces.passWd, true);
 
             _context.LBAcces.Add(lBAcces);
             await _context.SaveChangesAsync();
