@@ -24,7 +24,7 @@ namespace ApiLbWebs.Controllers
         // GET: api/LBAcces
         [HttpGet]
         public async Task<ActionResult<IEnumerable<LBAcces>>> GetLBAcces()
-        {
+        {            
             return await _context.LBAcces.ToListAsync();
         }
 
