@@ -38,7 +38,7 @@ namespace ApiLbWebs.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("faltrto")
-                        .HasColumnType("datetime2");
+                        .HasColumnType("datetime");
 
                     b.Property<string>("fmod")
                         .HasColumnType("nvarchar(max)");

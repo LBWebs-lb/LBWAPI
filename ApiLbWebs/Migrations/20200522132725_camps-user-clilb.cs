@@ -21,7 +21,7 @@ namespace ApiLbWebs.Migrations
                 name: "faltrto",
                 table: "clilb",
                 nullable: false,
-                defaultValue: new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified));
+                defaultValue: new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.));
 
             migrationBuilder.AddColumn<string>(
                 name: "fmod",

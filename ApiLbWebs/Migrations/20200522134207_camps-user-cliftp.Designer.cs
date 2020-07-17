@@ -38,7 +38,7 @@ namespace ApiLbWebs.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("faltrto")
-                        .HasColumnType("datetime2");
+                        .HasColumnType("datetime");
 
                     b.Property<string>("fmod")
                         .HasColumnType("nvarchar(max)");
@@ -77,7 +77,7 @@ namespace ApiLbWebs.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("faltrto")
-                        .HasColumnType("datetime2");
+                        .HasColumnType("datetime");
 
                     b.Property<string>("fmod")
                         .HasColumnType("nvarchar(max)");
@@ -145,7 +145,7 @@ namespace ApiLbWebs.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("faltrto")
-                        .HasColumnType("datetime2");
+                        .HasColumnType("datetime");
 
                     b.Property<string>("fmod")
                         .HasColumnType("nvarchar(max)");
@@ -181,7 +181,7 @@ namespace ApiLbWebs.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("faltrto")
-                        .HasColumnType("datetime2");
+                        .HasColumnType("datetime");
 
                     b.Property<string>("fmod")
                         .HasColumnType("nvarchar(max)");
@@ -229,7 +229,7 @@ namespace ApiLbWebs.Migrations
                         .HasColumnType("int");
 
                     b.Property<DateTime>("faltrto")
-                        .HasColumnType("datetime2");
+                        .HasColumnType("datetime");
 
                     b.Property<string>("fmod")
                         .HasColumnType("nvarchar(max)");

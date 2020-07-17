@@ -18,7 +18,6 @@ namespace ApiLbWebs.Classes
             byte[] keyArray;
             byte[] toEncryptArray = UTF8Encoding.UTF8.GetBytes(toEncrypt);
 
-            string key = getKey();
 
             string key = "txxswW3GYMqO3cO0UnyXsjIGySLglKAb";
 
