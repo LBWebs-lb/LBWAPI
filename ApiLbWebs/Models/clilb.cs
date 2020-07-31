@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace ApiLbWebs.Models
@@ -23,6 +24,7 @@ namespace ApiLbWebs.Models
         public virtual prediscli PreDis { get; set; }
         public string dnom { get; set; }
         public string dnommail { get; set; }
+        [JsonConverter(typeof(JsonStringEnumConverter))]
         public Estat est { get; set; }
         public string dobs { get; set; }
         public string tcli { get; set; }
