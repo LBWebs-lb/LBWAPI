@@ -113,5 +113,12 @@ namespace ApiLbWebs.Controllers
         {
             return _context.LBAcces.Any(e => e.idlb == id);
         }
+
+        public string DesncriptPassword(string password)
+        {
+            return Encriptacion.Decrypt(password, true);
+        }
+         
+
     }
 }
