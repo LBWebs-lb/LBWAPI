@@ -114,11 +114,14 @@ namespace ApiLbWebs.Controllers
             return _context.LBAcces.Any(e => e.idlb == id);
         }
 
-        public string DesncriptPassword(string password)
+        [HttpGet]
+        [Route("getpass/{param1}")] //   /api/example/get1/1?param2=4
+        public ActionResult<LBAcces> Get(string param1)
         {
-            return Encriptacion.Decrypt(password, true);
+            Object example = Encriptacion.Decrypt(param1, true);
+            return Ok(example);
         }
-         
+
 
     }
 }
