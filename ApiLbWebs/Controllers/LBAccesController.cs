@@ -85,7 +85,7 @@ namespace ApiLbWebs.Controllers
             //String hash = System.Text.Encoding.ASCII.GetString(data);
             //lBAcces.passWd = hash;
 
-            lBAcces.passWd = Encriptacion.Encrypt(lBAcces.passWd, true);
+            lBAcces.passWd = Encriptacion.Encrypt(lBAcces.passWd);
 
             _context.LBAcces.Add(lBAcces);
             await _context.SaveChangesAsync();
@@ -116,10 +116,10 @@ namespace ApiLbWebs.Controllers
 
         [HttpGet]
         [Route("getpass/{param1}")] //   /api/example/get1/1?param2=4
-        public ActionResult<LBAcces> Get(string param1)
+        public async Task<string> Get(int param1)
         {
-            Object example = Encriptacion.Decrypt(param1, true);
-            return Ok(example);
+            var lBAcces = await _context.LBAcces.FindAsync(param1);
+            return Encriptacion.Decrypt(lBAcces.passWd);
         }
 
 
